@@ -37,7 +37,7 @@ type IniFile struct {
 	Object  map[string][]Element
 }
 
-// IniFile的构造函数
+// IniFile's construct fun
 func NewIniFile() *IniFile {
 	o := make(map[string][]Element)
 	f := &IniFile{Object: o}
