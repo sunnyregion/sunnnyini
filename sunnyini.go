@@ -1,3 +1,16 @@
+// Copyright 2017 sunnyini authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License"): you may
+// not use this file except in compliance with the License. You may obtain
+// a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Source code and project home:
+// https://github.com/sunnyregion/sunnyini
+// Installation:
+// go get  github.com/sunnyregion/sunnyini
+//
 package sunnyini
 
 import (
@@ -64,7 +77,7 @@ func (i *IniFile) Parse(str string) {
 		}
 	} else if str == "" { // 空行
 
-	} else if str[0] == `#` || str[0] == `;` { //以#或者；开头的认为是注释
+	} else if str[0] == '#' || str[0] == ';' {
 
 	} else { // 键值对数据
 		// 分割字符串

@@ -9,7 +9,7 @@ import (
 
 func main() {
 	fmt.Println("Hello,this is test for parse ini file.")
-	f := readini.NewIniFile()
+	f := sunnyini.NewIniFile()
 	f.Readfile("conf/demo.ini")
 	// 获取所有的Section
 	section := f.GetSection()
@@ -18,8 +18,8 @@ func main() {
 		fmt.Println("The index of", i, "section:", v)
 	}
 	// 获取某一个section下的键值对
-	describ, v := f.GetValue("test")
-	fmt.Println("Get the map in section test")
+	describ, v := f.GetValue("example")
+	fmt.Println("Get the map in section example1")
 	if describ == "" { // 有数据
 		for _, value := range v {
 			for k, v := range value {
@@ -30,8 +30,8 @@ func main() {
 		fmt.Println(describ)
 	}
 	// 获取某个section下的某个key的值
-	describ, value := f.GetValueInSection("test", "id")
-	fmt.Println("Get the value in section:test of key:id")
+	describ, value := f.GetValueInSection("example", "id")
+	fmt.Println("Get the value in section:example of key:id")
 	if describ == "" {
 		fmt.Println("The val is", value)
 	} else {
