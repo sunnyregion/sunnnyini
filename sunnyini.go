@@ -10,6 +10,12 @@
 // https://github.com/sunnyregion/sunnyini
 // Installation:
 // go get  github.com/sunnyregion/sunnyini
+// Example:
+// f := sunnyini.NewIniFile()
+//	f.Readfile("conf/demo.ini")
+//	section := f.GetSection()
+//	…………
+//	describ, v := f.GetValue("example")
 //
 package sunnyini
 
