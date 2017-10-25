@@ -3,13 +3,14 @@ package main
 // 主函数
 import (
 	"fmt"
-	"github.com/sunnyregion/sunn"
+
+	"github.com/sunnyregion/sunnyini"
 )
 
 func main() {
 	fmt.Println("Hello,this is test for parse ini file.")
 	f := readini.NewIniFile()
-	f.Readfile("../conf/conf.ini")
+	f.Readfile("conf/demo.ini")
 	// 获取所有的Section
 	section := f.GetSection()
 	fmt.Println("There are:", len(section), "section")
@@ -37,5 +38,3 @@ func main() {
 		fmt.Println(describ)
 	}
 }
-
- 评论 (0)

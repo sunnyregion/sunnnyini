@@ -1,4 +1,4 @@
-package readini
+package sunnyini
 
 import (
 	"bufio"
@@ -63,6 +63,8 @@ func (i *IniFile) Parse(str string) {
 			i.section = root
 		}
 	} else if str == "" { // 空行
+
+	} else if str[0] == `#` || str[0] == `;` { //以#或者；开头的认为是注释
 
 	} else { // 键值对数据
 		// 分割字符串

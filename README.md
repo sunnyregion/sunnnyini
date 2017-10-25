@@ -5,7 +5,7 @@
 
     name=value
 ## 下载安装
-   go git github.com/sunnyregion/sunnnyini
+   go git github.com/sunnyregion/sunnyini
 ## 关于注释
 
 下述几种情况的内容将被视为注释：
