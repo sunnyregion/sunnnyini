@@ -62,7 +62,7 @@ func (i *IniFile) Readfile(filename string) {
 		// 以'\n'结束符读入一行
 		line, err := r.ReadString('\n')
 		if err != nil || io.EOF == err {
-			if len(line) < 3 {
+			if len(strings.TrimSpace(line)) < 3 {
 				break
 			}
 		}
