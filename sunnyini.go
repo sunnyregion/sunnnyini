@@ -62,7 +62,9 @@ func (i *IniFile) Readfile(filename string) {
 		// 以'\n'结束符读入一行
 		line, err := r.ReadString('\n')
 		if err != nil || io.EOF == err {
-			break
+			if len(line) < 3 {
+				break
+			}
 		}
 		// 删除行两端的空白字符
 		line = strings.TrimSpace(line)
