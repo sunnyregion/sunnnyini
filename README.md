@@ -16,3 +16,22 @@
 1. 所有以 `#` 或 `;` 开头的行
 2. 所有在 `#` 或 `;` 之后的内容
 3. 在行尾以"//"结尾的部分
+
+
+
+## git 标签的使用方法
+
+- :art: when improving the format/structure of the code
+- :rocket: when improving performance
+- :pencil2: when writing docs
+- :bulb: new idea
+- :construction: work in progress
+- :heavy_plus_sign: when adding feature
+- :heavy_minus_sign: when removing feature
+- :speaker: when adding logging
+- :mute: when reducing logging
+- :bug: when fixing a bug
+- :white_check_mark: when adding tests
+- :lock: when dealing with security
+- :arrow_up: when upgrading dependencies
+- :arrow_down: when downgrading dependencies
