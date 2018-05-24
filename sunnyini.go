@@ -27,7 +27,6 @@ package sunnyini
 
 import (
 	"bufio"
-	_ "fmt"
 	"io"
 	"os"
 	"strings"
@@ -36,7 +35,7 @@ import (
 //Element section下面的键值对
 type Element map[string]string
 
-// ini文件结构(对象)
+//IniFile ini文件结构(对象)
 // section为key
 type IniFile struct {
 	section string
@@ -116,7 +115,7 @@ func (i *IniFile) Parse(str string) {
 //GetSection 获取所有的Section
 func (i *IniFile) GetSection() []string {
 	key := []string{}
-	for k, _ := range i.Object {
+	for k := range i.Object {
 		key = append(key, k)
 	}
 	return key
