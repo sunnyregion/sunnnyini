@@ -1,3 +1,5 @@
+package sunnyini
+
 // Copyright 2017 sunnyini authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License"): you may
@@ -22,7 +24,6 @@
 //   …………
 //   describ, v := f.GetValue("example")
 //
-package sunnyini
 
 import (
 	"bufio"
@@ -32,7 +33,7 @@ import (
 	"strings"
 )
 
-// section下面的键值对
+//Element section下面的键值对
 type Element map[string]string
 
 // ini文件结构(对象)
@@ -42,14 +43,14 @@ type IniFile struct {
 	Object  map[string][]Element
 }
 
-// IniFile's construct fun
+//NewIniFile IniFile's construct fun
 func NewIniFile() *IniFile {
 	o := make(map[string][]Element)
 	f := &IniFile{Object: o}
 	return f
 }
 
-// read file读取文件
+//Readfile read file读取文件
 func (i *IniFile) Readfile(filename string) {
 	f, err := os.Open(filename)
 	if err != nil {
@@ -75,7 +76,7 @@ func (i *IniFile) Readfile(filename string) {
 	}
 }
 
-// 解析一行中的内容
+//Parse 解析一行中的内容
 func (i *IniFile) Parse(str string) {
 	length := len(str)
 	// fmt.Println("The string is:", str, "and the length is:", length)
@@ -112,7 +113,7 @@ func (i *IniFile) Parse(str string) {
 	}
 }
 
-// 获取所有的Section
+//GetSection 获取所有的Section
 func (i *IniFile) GetSection() []string {
 	key := []string{}
 	for k, _ := range i.Object {
@@ -121,7 +122,7 @@ func (i *IniFile) GetSection() []string {
 	return key
 }
 
-// 获取section下的键值对数据
+//GetValue 获取section下的键值对数据
 func (i *IniFile) GetValue(section string) (string, []Element) {
 	if v, ok := i.Object[section]; ok {
 		return "", v
@@ -129,7 +130,7 @@ func (i *IniFile) GetValue(section string) (string, []Element) {
 	return "There is no data in " + section, nil
 }
 
-// 获取某个section下的某个键的值
+//GetValueInSection 获取某个section下的某个键的值
 func (i *IniFile) GetValueInSection(section, key string) (string, string) {
 	if v, ok := i.Object[section]; ok {
 		for _, ele := range v { // 循环数组
