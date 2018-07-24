@@ -42,14 +42,14 @@ type IniFile struct {
 	Object  map[string][]Element
 }
 
-//NewIniFile IniFile's construct fun
+// NewIniFile IniFile's construct fun
 func NewIniFile() *IniFile {
 	o := make(map[string][]Element)
 	f := &IniFile{Object: o}
 	return f
 }
 
-//Readfile read file读取文件
+// Readfile read file读取文件
 func (i *IniFile) Readfile(filename string) {
 	f, err := os.Open(filename)
 	if err != nil {
@@ -75,7 +75,7 @@ func (i *IniFile) Readfile(filename string) {
 	}
 }
 
-//Parse 解析一行中的内容
+// Parse 解析一行中的内容
 func (i *IniFile) Parse(str string) {
 	length := len(str)
 	// fmt.Println("The string is:", str, "and the length is:", length)
@@ -112,7 +112,7 @@ func (i *IniFile) Parse(str string) {
 	}
 }
 
-//GetSection 获取所有的Section
+// GetSection 获取所有的Section
 func (i *IniFile) GetSection() []string {
 	key := []string{}
 	for k := range i.Object {
@@ -121,7 +121,7 @@ func (i *IniFile) GetSection() []string {
 	return key
 }
 
-//GetValue 获取section下的键值对数据
+// GetValue 获取section下的键值对数据
 func (i *IniFile) GetValue(section string) (string, []Element) {
 	if v, ok := i.Object[section]; ok {
 		return "", v
@@ -129,7 +129,7 @@ func (i *IniFile) GetValue(section string) (string, []Element) {
 	return "There is no data in " + section, nil
 }
 
-//GetValueInSection 获取某个section下的某个键的值
+// GetValueInSection 获取某个section下的某个键的值
 func (i *IniFile) GetValueInSection(section, key string) (string, string) {
 	if v, ok := i.Object[section]; ok {
 		for _, ele := range v { // 循环数组
