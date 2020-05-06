@@ -98,7 +98,8 @@ func (i *IniFile) Parse(str string) {
 		key := strings.TrimSpace(s[0])
 		value := strings.TrimSpace(s[1])
 		iValue := strings.Index(value, `//`)
-		if iValue > 0 {
+		iValue2 := strings.Index(value, `://`)
+		if iValue > 0 && iValue2+1 != iValue {
 			value = value[:iValue]
 			value = strings.TrimSpace(value)
 		}
